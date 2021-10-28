@@ -86,7 +86,7 @@ router.delete("/:id", (req, res) => {
     where: { id: req.params.id },
   })
     .then((catData) => {
-      if (!catData[0]) {
+      if (!catData) {
         res.status(404).json({ message: "Nothing found with this id." });
         return;
       }
